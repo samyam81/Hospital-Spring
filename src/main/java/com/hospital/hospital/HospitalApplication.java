@@ -15,6 +15,13 @@ public class HospitalApplication {
 		p1.setPatientID(1);
 		p1.setAddress("789 Oak Street");
 
-	}
+		Doctor d1= context.getBean(Doctor.class);
+		d1.setDoctor_id(1);
+		d1.setName("Dr. Adams");
 
+		Nurse n1= context.getBean(Nurse.class);
+		n1.setNurse_id(1);
+		n1.setName("Nurse Smith");
+
+	}
 }
