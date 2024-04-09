@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
-import com.hospital.hospital.Patient;
+import com.hospital.hospital.Entity.Patient;
 
 @Repository
 public class PatientRepo {

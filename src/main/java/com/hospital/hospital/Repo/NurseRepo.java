@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
 
-import com.hospital.hospital.Nurse;
+import com.hospital.hospital.Entity.Nurse;
 
 @Component
 public class NurseRepo {

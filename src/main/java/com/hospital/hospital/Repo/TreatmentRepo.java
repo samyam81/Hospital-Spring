@@ -2,13 +2,11 @@ package com.hospital.hospital.Repo;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.stereotype.Repository;
 
-import com.hospital.hospital.Entity.Doctor;
+import com.hospital.hospital.Entity.Treatment;
 
-@Repository
-public class DoctorRepo {
-    
+public class TreatmentRepo {
+
     @Autowired
     private JdbcTemplate template;
 
@@ -20,12 +18,10 @@ public class DoctorRepo {
         this.template = template;
     }
 
-    // Change this into Doctor class
-    public void save(Doctor d1){
-        String sql="Insert into Doctor(id,name)& values(?,?)";
-        int rows=template.update(sql,d1.getDoctor_id(),d1.getName());
+    public void save(Treatment t1){
+        String sql="Insert into Treatment(id,Date)& values(?,?)";
+        int rows=template.update(sql,t1.getTreatment_Id(),t1.getDate());
         System.out.println("Rows Affected:::"+rows);    
-    } //Done.
-
+    }
 
 }

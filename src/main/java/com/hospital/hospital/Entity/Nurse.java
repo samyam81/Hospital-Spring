@@ -1,4 +1,4 @@
-package com.hospital.hospital;
+package com.hospital.hospital.Entity;
 
 import org.springframework.stereotype.Component;
 

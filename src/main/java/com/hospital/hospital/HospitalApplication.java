@@ -4,6 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 
+import com.hospital.hospital.Entity.Doctor;
+import com.hospital.hospital.Entity.Nurse;
+import com.hospital.hospital.Entity.Patient;
+
 @SpringBootApplication
 public class HospitalApplication {
 
