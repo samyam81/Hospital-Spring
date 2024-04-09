@@ -7,7 +7,7 @@ public class Patient {
     private int PatientID;
     private String name;
     private String address;
-    
+
     public int getPatientID() {
         return PatientID;
     }
@@ -26,5 +26,11 @@ public class Patient {
     public void setAddress(String address) {
         this.address = address;
     }
+    
+    @Override
+    public String toString() {
+        return "Patient [PatientID=" + PatientID + ", name=" + name + ", address=" + address + "]";
+    }
+    
     
 }
