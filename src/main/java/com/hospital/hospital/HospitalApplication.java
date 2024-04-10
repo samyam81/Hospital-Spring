@@ -4,13 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 
-import com.hospital.hospital.Entity.*;
+import java.util.List;
 
-import com.hospital.hospital.Repo.AppointmentRepo;
-import com.hospital.hospital.Repo.DoctorRepo;
-import com.hospital.hospital.Repo.NurseRepo;
-import com.hospital.hospital.Repo.PatientRepo;
-import com.hospital.hospital.Repo.TreatmentRepo;
+import com.hospital.hospital.Entity.*;
+import com.hospital.hospital.Repo.*;
 
 @SpringBootApplication
 public class HospitalApplication {
@@ -25,7 +22,7 @@ public class HospitalApplication {
         TreatmentRepo treatmentRepo = context.getBean(TreatmentRepo.class);
         AppointmentRepo appointmentRepo = context.getBean(AppointmentRepo.class);
 
-        // Create entities
+        // Save entities
         Patient p1 = new Patient();
         p1.setName("John Doe");
         p1.setPatientID(1);
@@ -50,5 +47,36 @@ public class HospitalApplication {
         Appointment a1 = new Appointment();
         a1.setAppointment_ID(1);
         appointmentRepo.save(a1);
+
+        // Fetch all records
+        List<Patient> patients = patientRepo.findAll();
+        System.out.println("Patients:");
+        for (Patient patient : patients) {
+            System.out.println(patient);
+        }
+
+        List<Doctor> doctors = doctorRepo.findAll();
+        System.out.println("\nDoctors:");
+        for (Doctor doctor : doctors) {
+            System.out.println(doctor);
+        }
+
+        List<Nurse> nurses = nurseRepo.findAll();
+        System.out.println("\nNurses:");
+        for (Nurse nurse : nurses) {
+            System.out.println(nurse);
+        }
+
+        List<Treatment> treatments = treatmentRepo.findAll();
+        System.out.println("\nTreatments:");
+        for (Treatment treatment : treatments) {
+            System.out.println(treatment);
+        }
+
+        List<Appointment> appointments = appointmentRepo.findAll();
+        System.out.println("\nAppointments:");
+        for (Appointment appointment : appointments) {
+            System.out.println(appointment);
+        }
     }
 }
