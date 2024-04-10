@@ -4,11 +4,11 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
-import javax.swing.tree.RowMapper;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
+
 import com.hospital.hospital.Entity.Doctor;
 
 @Repository
@@ -17,19 +17,10 @@ public class DoctorRepo {
     @Autowired
     private JdbcTemplate template;
 
-    public JdbcTemplate getTemplate() {
-        return template;
-    }
-
-    public void setTemplate(JdbcTemplate template) {
-        this.template = template;
-    }
-
-
     public void save(Doctor d1){
-        String sql="Insert into Doctor(id,name)& values(?,?)";
-        int rows=template.update(sql,d1.getDoctor_id(),d1.getName());
-        System.out.println("Rows Affected:::"+rows);    
+        String sql = "INSERT INTO Doctor (id, name) VALUES (?, ?)";
+        int rows = template.update(sql, d1.getDoctor_id(), d1.getName());
+        System.out.println("Rows Affected: " + rows);    
     }
 
     public List<Doctor> findAll(){
@@ -40,14 +31,11 @@ public class DoctorRepo {
 
     private class DoctorRowMapper implements RowMapper<Doctor> {
         @Override
-        public Doctor mapRow(ResultSet rs, int rowNum) throws SQLException{
-         Doctor d1=new Doctor();
-         d1.setDoctor_id(rs.getInt("id"));
-         d1.setName(rs.getNString("Name"));
-        return d1;
+        public Doctor mapRow(ResultSet rs, int rowNum) throws SQLException {
+            Doctor d1 = new Doctor();
+            d1.setDoctor_id(rs.getInt("id"));
+            d1.setName(rs.getString("name"));
+            return d1;
         }
-    
-        
     }
-
 }
