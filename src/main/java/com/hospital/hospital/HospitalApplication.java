@@ -78,5 +78,7 @@ public class HospitalApplication {
         for (Appointment appointment : appointments) {
             System.out.println(appointment);
         }
+
+        new HospitalApplication2();
     }
 }
