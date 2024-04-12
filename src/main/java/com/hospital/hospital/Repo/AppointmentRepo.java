@@ -31,7 +31,7 @@ public class AppointmentRepo {
 
     private class AppointmentRowMapper implements RowMapper<Appointment> {
         @Override
-        public Appointment mapRow(ResultSet rs, int rowNum) throws SQLException {
+        public Appointment mapRow(@SuppressWarnings("null") ResultSet rs, int rowNum) throws SQLException {
             Appointment appointment = new Appointment();
             appointment.setAppointment_ID(rs.getInt("id"));
             // Set other properties of the Appointment object if necessary

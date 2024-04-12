@@ -35,7 +35,7 @@ public class DoctorRepo {
 
     private class DoctorRowMapper implements RowMapper<Doctor> {
         @Override
-        public Doctor mapRow(ResultSet rs, int rowNum) throws SQLException {
+        public Doctor mapRow(@SuppressWarnings("null") ResultSet rs, int rowNum) throws SQLException {
             Doctor d1 = new Doctor();
             d1.setDoctor_id(rs.getInt("id"));
             d1.setName(rs.getString("name"));

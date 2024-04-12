@@ -34,7 +34,7 @@ public class TreatmentRepo {
 
     private class TreatmentRowMapper implements RowMapper<Treatment> {
         @Override
-        public Treatment mapRow(ResultSet rs, int rowNum) throws SQLException {
+        public Treatment mapRow(@SuppressWarnings("null") ResultSet rs, int rowNum) throws SQLException {
             Treatment treatment = new Treatment();
             treatment.setTreatment_Id(rs.getInt("id"));        
             String dateString = rs.getString("Date");

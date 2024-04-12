@@ -14,7 +14,7 @@ public class HospitalApplication2 {
         Check ch1=new Check();
         ch1.setEno(1);
         ch1.setPass("0011");
-        Chr.check(ch1);
+        Chr.check(ch1,ch1.getEno(),ch1.getPass());
 
     }
 }

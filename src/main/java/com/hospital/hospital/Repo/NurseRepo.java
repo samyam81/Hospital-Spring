@@ -31,7 +31,7 @@ public class NurseRepo {
 
     private class NurseRowMapper implements RowMapper<Nurse> {
         @Override
-        public Nurse mapRow(ResultSet rs, int rowNum) throws SQLException {
+        public Nurse mapRow(@SuppressWarnings("null") ResultSet rs, int rowNum) throws SQLException {
             Nurse nurse = new Nurse();
             nurse.setNurse_id(rs.getInt("id"));
             nurse.setName(rs.getString("name"));

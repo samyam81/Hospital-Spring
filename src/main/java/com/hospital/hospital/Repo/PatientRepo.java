@@ -31,7 +31,7 @@ public class PatientRepo {
 
     private class PatientRowMapper implements RowMapper<Patient> {
         @Override
-        public Patient mapRow(ResultSet rs, int rowNum) throws SQLException{
+        public Patient mapRow(@SuppressWarnings("null") ResultSet rs, int rowNum) throws SQLException{
             Patient p1 = new Patient();
             p1.setPatientID(rs.getInt("id"));
             p1.setName(rs.getString("name"));
