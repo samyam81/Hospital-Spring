@@ -2,35 +2,16 @@ package com.hospital.hospital.Entity;
 
 import org.springframework.stereotype.Component;
 
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+
+@Setter
+@Getter
+@ToString
 @Component
 public class Patient {
     private int PatientID;
     private String name;
     private String address;
-
-    public int getPatientID() {
-        return PatientID;
-    }
-    public void setPatientID(int patientID) {
-        PatientID = patientID;
-    }
-    public String getName() {
-        return name;
-    }
-    public void setName(String name) {
-        this.name = name;
-    }
-    public String getAddress() {
-        return address;
-    }
-    public void setAddress(String address) {
-        this.address = address;
-    }
-    
-    @Override
-    public String toString() {
-        return "Patient [PatientID=" + PatientID + ", name=" + name + ", address=" + address + "]";
-    }
-    
-    
 }
