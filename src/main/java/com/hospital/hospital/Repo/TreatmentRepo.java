@@ -33,6 +33,7 @@ public class TreatmentRepo {
     }
 
     private class TreatmentRowMapper implements RowMapper<Treatment> {
+        @SuppressWarnings("unused")
         @Override
         public Treatment mapRow(@SuppressWarnings("null") ResultSet rs, int rowNum) throws SQLException {
             Treatment treatment = new Treatment();
