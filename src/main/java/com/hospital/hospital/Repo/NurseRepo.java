@@ -7,24 +7,24 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 import com.hospital.hospital.Entity.Nurse;
 
-@Component
+@Repository
 public class NurseRepo {
 
     @Autowired
     private JdbcTemplate template;
 
     public void save(Nurse n1) {
-        String sql = "INSERT INTO Nurse (id, name) VALUES (?, ?)";
+        String sql = "INSERT INTO Nurses (id, name) VALUES (?, ?)";
         int rows = template.update(sql, n1.getNurse_id(), n1.getName());
         System.out.println("Rows Affected: " + rows);    
     }
 
     public List<Nurse> findAll() {
-        String sql = "SELECT * FROM nurses";
+        String sql = "SELECT * FROM Nurses";
         List<Nurse> nurses = template.query(sql, new NurseRowMapper());
         return nurses;
     }

@@ -10,24 +10,24 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 import com.hospital.hospital.Entity.Treatment;
 
-@Component
+@Repository
 public class TreatmentRepo {
 
     @Autowired
     private JdbcTemplate template;
 
     public void save(Treatment t1) {
-        String sql = "INSERT INTO Treatment (id, Date) VALUES (?, ?)";
+        String sql = "INSERT INTO Treatments (id, Date) VALUES (?, ?)";
         int rows = template.update(sql, t1.getTreatment_Id(), t1.getDate());
         System.out.println("Rows Affected: " + rows);
     }
 
     public List<Treatment> findAll() {
-        String sql = "SELECT * FROM treatment";
+        String sql = "SELECT * FROM treatments";
         List<Treatment> treatments = template.query(sql, new TreatmentRowMapper());
         return treatments;
     }

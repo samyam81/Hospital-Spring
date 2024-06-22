@@ -18,7 +18,7 @@ public class PatientRepo {
     private JdbcTemplate template;
 
     public void save(Patient p1){
-        String sql = "INSERT INTO Patient (id, name, Address) VALUES (?, ?, ?)";
+        String sql = "INSERT INTO Patients (id, name, Address) VALUES (?, ?, ?)";
         int rows = template.update(sql, p1.getPatientID(), p1.getName(), p1.getAddress());
         System.out.println("Rows Affected: " + rows);    
     }

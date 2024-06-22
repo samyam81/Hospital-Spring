@@ -18,13 +18,13 @@ public class AppointmentRepo {
     private JdbcTemplate template;
 
     public void save(Appointment a1) {
-        String sql = "INSERT INTO Appointment (id) VALUES (?)";
+        String sql = "INSERT INTO Appointments (id) VALUES (?)";
         int rows = template.update(sql, a1.getAppointment_ID());
         System.out.println("Rows Affected: " + rows);
     }
 
     public List<Appointment> findAll() {
-        String sql = "SELECT * FROM Appointment";
+        String sql = "SELECT * FROM Appointments";
         List<Appointment> appointments = template.query(sql, new AppointmentRowMapper());
         return appointments;
     }

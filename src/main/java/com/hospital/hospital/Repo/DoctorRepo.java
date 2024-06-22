@@ -22,7 +22,7 @@ public class DoctorRepo {
     private JdbcTemplate template;
 
     public void save(Doctor d1){
-        String sql = "INSERT INTO Doctor (id, name) VALUES (?, ?)";
+        String sql = "INSERT INTO Doctors (id, name) VALUES (?, ?)";
         int rows = template.update(sql, d1.getDoctor_id(), d1.getName());
         System.out.println("Rows Affected: " + rows);    
     }
